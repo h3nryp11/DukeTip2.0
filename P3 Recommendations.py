@@ -12,21 +12,21 @@ def findSimilar(iLike, userLikes):
     similaritySum = 0 # replace 0 with the correct code
     # Create an Or similarity
     userSimilarityOr = 0 # replace 0 with the correct code
-    
+
     # Calculate the similarity
     userSimilarity = 0 # replace 0 with the correct code to calculate the Jaccard Index for each user
-    
+
     # Make the most similar user has a new like that the previous user did not have
     # I used a while loop.
     # You can "get rid" of a user that is most similar, but doesn't have any new likes
     # by setting the userSimilarity for them to 0
     # When you get the index, save it in the variable maxIndex
-    
+
     # Print the max similarity number (most times this is something like 0.17
-    
+
     # Return the index of the user which is the best match
     return maxIndex
-    
+
 def printMovie(id):
     # Print the id of the movie and the name.  This should look something like
     # "    - 430: Duck Soup (1933)" if the id is 430 and the name is Duck Soup (1933)
@@ -34,7 +34,7 @@ def printMovie(id):
 
 def processLikes(iLike):
     print("\n\nSince you like:")
-    
+
     # Print the name of each movie the user reported liking
     # Hint: Use a for loop and the printMovie function.
 
@@ -65,7 +65,6 @@ movieNames = np.loadtxt('./ml-100k/u.item',
                         dtype={'names': ('id', 'name'),
                         'formats': (np.int, 'S128')})
 
-
 # Create a dictionary with the ids as keys and the names as the values
 movieDict = dict(zip(movieNames['id'], movieNames['name']))
 # Load the movie Data (u.data) with just columns 0, 1, and 2 (user, movie, rating) all are np.int
@@ -90,29 +89,41 @@ exit(0) # Delete this after we finish phase 1, for now just get the data loaded
 
 movieRatingTemp = {} # replace 0 with code for an empty dictionary
 
-for ('movie') in movieData
+for movie in movieData:
+        if movie['movie'] not in movieRatingTemp
+
+        print(movie['id'])
+
 # for that movies ID (don't forget to initialize the dictionary entry)
 
 # Create an empty dictionary for movieRating and movieRatingCount
 movieRating = {} # replace 0 with code for an empty dictionary
-movieRatingCount = {} # replace 0 with code for an empty dictionary
+movieRatingCount = {}
+count = 0  # replace 0 with code for an empty dictionary
 
 # Using numpy place the average rating for each movie in movieRating and the total number of ratings in movieRatingCount
 # Note: You will need a for loop to get each dictionary key
+for
+
 
 
 # Get sorting ratings
 # https://www.saltycrane.com/blog/2007/09/how-to-sort-python-dictionary-by-keys/
 movieRatingS = sorted(movieRating.iteritems(), key=lambda (k,v): (v,k), reverse=True)
+print(movieRatingS)
 
 # Top 10 Movies
 print("Top Ten Movies:")
+for movie in range(0, 11):
+    rating = movieRating(5)
+    movie = movieRating(5)
+
 # Print the top 10 movies
 # It should print the number, title, id, rating and count of reviews for each movie
 # ie 2. Someone Else's America (1995) (ID: 1599) Rating: 5.0 Count: 1
 
 
-# Top 10 Movies with at least 100 ratings    
+# Top 10 Movies with at least 100 ratings
 print("\n\nTop Ten movies with at least 100 ratings:")
 # It should print the same thing, but this time all the movies should have over 100 ratings
 # The number should be the movie's absolute rank
@@ -171,4 +182,3 @@ processLikes(iLike)
 # You can just assume they have a list of movies somewhere so they already know what numbers to type in.
 # If you'd like to give them options though, that would be a cool bonus project if you finish early.
 
-        
