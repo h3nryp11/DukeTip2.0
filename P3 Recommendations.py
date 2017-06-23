@@ -7,11 +7,11 @@ import numpy as np
 
 def findSimilar(iLike, userLikes):
     # Create an And similarity
-    similarityAnd = 0 # replace 0 with the correct code
+    similarityAnd = iLike * userLikes # replace 0 with the correct code
     # Create a per user sum
-    similaritySum = 0 # replace 0 with the correct code
+    similarityAndSum = similarityAnd.sum(axis = 1) # replace 0 with the correct code
     # Create an Or similarity
-    userSimilarityOr = 0 # replace 0 with the correct code
+    userSimilarityOr = Likes.sum(axis = 1) # replace 0 with the correct code
 
     # Calculate the similarity
     userSimilarity = 0 # replace 0 with the correct code to calculate the Jaccard Index for each user
@@ -89,11 +89,11 @@ exit(0) # Delete this after we finish phase 1, for now just get the data loaded
 
 movieRatingTemp = {} # replace 0 with code for an empty dictionary
 
-for movie in movieData:
-        if movie['movie'] not in movieRatingTemp
-
-        print(movie['id'])
-
+for row in movieData:
+    if row['movie']not in movieRatingTemp:
+        movieRatingTemp[row['movie']] = []
+    movieRatingTemp[row['movie']].append(row['rating'])
+exit(0)
 # for that movies ID (don't forget to initialize the dictionary entry)
 
 # Create an empty dictionary for movieRating and movieRatingCount
@@ -103,7 +103,10 @@ count = 0  # replace 0 with code for an empty dictionary
 
 # Using numpy place the average rating for each movie in movieRating and the total number of ratings in movieRatingCount
 # Note: You will need a for loop to get each dictionary key
-for
+for myKey in movieRatingTemp:
+    movieRating[myKey] = np.mean(movieRatingTemp[myKey])
+    movieRatingCount[myKey] = len(movieRatingTemp[myKey])
+
 
 
 
@@ -114,23 +117,43 @@ print(movieRatingS)
 
 # Top 10 Movies
 print("Top Ten Movies:")
-for movie in range(0, 11):
-    rating = movieRating(5)
-    movie = movieRating(5)
+for i in range(0, 10):
+    rating = movieRatingS[i][0]
+    movie = movieRatingS[i][1]
+    movie = movieDict[movie]
+    count = movieRatingCount[movieRatingS](0, 10)
+    print("Movie Id:" + str(movieRatingS[i][0]) + "Rating: "+
+          str(movieRatingS[i][1])+ " " + movieDict[movieRatingS[i][0]] +
+          "Count: " + str(movieRatingCount[movieRatingS[i][0]]))
+print(movieRatingS)[0][0]
+exit(0)
 
 # Print the top 10 movies
 # It should print the number, title, id, rating and count of reviews for each movie
 # ie 2. Someone Else's America (1995) (ID: 1599) Rating: 5.0 Count: 1
 
 
-# Top 10 Movies with at least 100 ratings
+#Top 10 Movies with at least 100 ratings
 print("\n\nTop Ten movies with at least 100 ratings:")
+i = 0
+num = 0
+while num < 10:
+    rating = movieRatingS[i][0]
+    movie = movieRatingS[i][1]
+    movie = movieDict[movie]
+    count = movieRatingCount[movieRatingS](0, 10)
+
+
+
+
+
+
 # It should print the same thing, but this time all the movies should have over 100 ratings
 # The number should be the movie's absolute rank
 # ie (16. Close Shave, A (1995) (ID: 408) Rating: 4.49 Count: 112)
 # Number 16 is first in this list because it's the first movie with over 100 ratings
 
-exit(0) # Remove this line after we finish phase 2
+#exit(0) # Remove this line after we finish phase 2
 
 ########################################################
 # Begin Phase 3
@@ -141,17 +164,33 @@ exit(0) # Remove this line after we finish phase 2
 # Create a numpy ndarray of zeros with demensions of max user id + 1 and max movie + 1 (because we'll use them as 1 indexed not zero indexed)
 
 # Find the max movie ID + 1
-maxMovie = 0 # replace 0 with the correct code
+maxMovie = movieData['movie'].movie() + 1 # replace 0 with the correct code
 
 # Find the max user Id + 1
-maxUser = 0 # replace 0 with the correct code
+maxUser = movieData['user'].max() + 1 # replace 0 with the correct code
 
 # Create an array of 0s which will fill in with 1s when a user likes a movie
 userLikes = np.zeros((maxUser, maxMovie))
 
+
+for n in movieData:
+    if n('movieData') >= 4:
+        userLikes
+
+
+
+
+
+
+
+
+
+
 # Go through all the rows of the movie data.
 # If the user rated a movie as 4 or 5 set userLikes to 1 for that user and movie
 # Note: You'll need a for loop and an if statement
+for row in movieData:
+    if userLikes > 4:
 
 
 ########################################################
